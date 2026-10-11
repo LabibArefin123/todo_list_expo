@@ -5,12 +5,13 @@ import {
   Platform,
   Pressable,
   Text,
-  TextInput,
   View,
 } from "react-native";
-
 import { styles } from "../styles/home.styles";
-import type { Priority } from "./index_tasks";
+import type { Priority } from "./home_tasks/task_types";
+import { ModalHeader } from "./home_modal/modal_header";
+import { ModalTaskFields } from "./home_modal/modal_task_fields";
+import { ModalOptions } from "./home_modal/modal_options";
 
 type TaskModalProps = {
   visible: boolean;
@@ -23,10 +24,6 @@ type TaskModalProps = {
   onPriorityChange: (priority: Priority) => void;
   onSubmit: () => void;
 };
-
-const categories = ["Work", "Personal", "Design", "Study", "Health"];
-
-const priorities: Priority[] = ["High", "Medium", "Low"];
 
 export function HomeTaskModal({
   visible,
@@ -55,106 +52,26 @@ export function HomeTaskModal({
           default: undefined,
         })}
       >
-        {/* Backdrop */}
         <Pressable style={styles.modalBackdrop} onPress={onClose} />
-
-        {/* Modal Content */}
         <View style={styles.modalContent}>
-          <View style={styles.modalHandle} />
-
-          {/* Header */}
-          <View style={styles.modalHeader}>
-            <View>
-              <Text style={styles.modalTitle}>Create a task</Text>
-
-              <Text style={styles.modalSubtitle}>
-                Make your next move count.
-              </Text>
-            </View>
-
-            <Pressable
-              onPress={onClose}
-              style={styles.modalClose}
-              accessibilityRole="button"
-              accessibilityLabel="Close modal"
-            >
-              <Ionicons name="close" size={21} color="#686576" />
-            </Pressable>
-          </View>
-
-          {/* Task Name */}
-          <Text style={styles.inputLabel}>TASK NAME</Text>
-
-          <TextInput
-            value={taskTitle}
-            onChangeText={onTitleChange}
-            placeholder="What needs to be done?"
-            placeholderTextColor="#AAA7B3"
-            style={styles.modalInput}
-            autoFocus
-            maxLength={100}
-            returnKeyType="done"
-            onSubmitEditing={onSubmit}
+          <ModalHeader onClose={onClose} />
+          <ModalTaskFields
+            taskTitle={taskTitle}
+            onTitleChange={onTitleChange}
+            onSubmit={onSubmit}
           />
-
-          {/* Category */}
-          <Text style={styles.inputLabel}>CATEGORY</Text>
-
-          <View style={styles.optionContainer}>
-            {categories.map((category) => (
-              <Pressable
-                key={category}
-                onPress={() => onCategoryChange(category)}
-                style={[
-                  styles.optionButton,
-                  taskCategory === category && styles.optionButtonActive,
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.optionText,
-                    taskCategory === category && styles.optionTextActive,
-                  ]}
-                >
-                  {category}
-                </Text>
-              </Pressable>
-            ))}
-          </View>
-
-          {/* Priority */}
-          <Text style={styles.inputLabel}>PRIORITY</Text>
-
-          <View style={styles.priorityOptions}>
-            {priorities.map((priority) => (
-              <Pressable
-                key={priority}
-                onPress={() => onPriorityChange(priority)}
-                style={[
-                  styles.priorityOption,
-                  taskPriority === priority && styles.priorityOptionActive,
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.optionText,
-                    taskPriority === priority && styles.optionTextActive,
-                  ]}
-                >
-                  {priority}
-                </Text>
-              </Pressable>
-            ))}
-          </View>
-
-          {/* Submit */}
+          <ModalOptions
+            taskCategory={taskCategory}
+            taskPriority={taskPriority}
+            onCategoryChange={onCategoryChange}
+            onPriorityChange={onPriorityChange}
+          />
           <Pressable
             style={styles.submitButton}
             onPress={onSubmit}
             accessibilityRole="button"
           >
             <Ionicons name="add-circle-outline" size={20} color="#FFFFFF" />
-
             <Text style={styles.submitButtonText}>Create task</Text>
           </Pressable>
         </View>
