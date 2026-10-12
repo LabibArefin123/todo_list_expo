@@ -1,125 +1,13 @@
-import { StyleSheet } from "react-native";
+import { modalLayoutStyles } from "./home_modal/home_modal_layout.styles";
+import { modalHeaderStyles } from "./home_modal/home_modal_header.styles";
+import { modalInputStyles } from "./home_modal/home_modal_inputs.styles";
+import { modalOptionStyles } from "./home_modal/home_modal_options.styles";
+import { modalActionStyles } from "./home_modal/home_modal_actions.styles";
 
-export const modalStyles = StyleSheet.create({
-  modalOverlay: {
-    flex: 1,
-    justifyContent: "flex-end",
-  },
-  modalBackdrop: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(31, 28, 48, 0.45)",
-  },
-  modalContent: {
-    backgroundColor: "#FBFAF8",
-    borderTopLeftRadius: 29,
-    borderTopRightRadius: 29,
-    paddingHorizontal: 23,
-    paddingTop: 12,
-    paddingBottom: 30,
-  },
-  modalHandle: {
-    width: 42,
-    height: 4,
-    backgroundColor: "#DCD8E2",
-    borderRadius: 5,
-    alignSelf: "center",
-    marginBottom: 23,
-  },
-  modalHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 25,
-  },
-  modalTitle: {
-    color: "#29263C",
-    fontSize: 23,
-    fontWeight: "800",
-  },
-  modalSubtitle: {
-    color: "#96929F",
-    fontSize: 11,
-    marginTop: 5,
-  },
-  modalClose: {
-    width: 37,
-    height: 37,
-    backgroundColor: "#EFEDF1",
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  inputLabel: {
-    color: "#827D90",
-    fontSize: 10,
-    fontWeight: "800",
-    letterSpacing: 1.2,
-    marginBottom: 10,
-    marginTop: 16,
-  },
-  modalInput: {
-    height: 52,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 13,
-    borderWidth: 1,
-    borderColor: "#EAE6EE",
-    paddingHorizontal: 15,
-    color: "#302D43",
-    fontSize: 13,
-  },
-  optionContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-  },
-  optionButton: {
-    paddingHorizontal: 13,
-    paddingVertical: 10,
-    backgroundColor: "#F0EEF3",
-    borderRadius: 10,
-  },
-  optionButtonActive: {
-    backgroundColor: "#EAE4FC",
-    borderWidth: 1,
-    borderColor: "#A18CE8",
-  },
-  optionText: {
-    color: "#85808F",
-    fontSize: 11,
-    fontWeight: "700",
-  },
-  optionTextActive: {
-    color: "#7963C9",
-  },
-  priorityOptions: {
-    flexDirection: "row",
-    gap: 9,
-  },
-  priorityOption: {
-    flex: 1,
-    alignItems: "center",
-    paddingVertical: 12,
-    borderRadius: 11,
-    backgroundColor: "#F0EEF3",
-  },
-  priorityOptionActive: {
-    backgroundColor: "#EAE4FC",
-    borderWidth: 1,
-    borderColor: "#A18CE8",
-  },
-  submitButton: {
-    height: 53,
-    backgroundColor: "#8D78DC",
-    borderRadius: 14,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    gap: 9,
-    marginTop: 27,
-  },
-  submitButtonText: {
-    color: "#FFFFFF",
-    fontSize: 13,
-    fontWeight: "800",
-  },
-});
+export const modalStyles = {
+  ...modalLayoutStyles,
+  ...modalHeaderStyles,
+  ...modalInputStyles,
+  ...modalOptionStyles,
+  ...modalActionStyles,
+};
