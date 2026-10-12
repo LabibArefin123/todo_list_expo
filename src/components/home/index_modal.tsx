@@ -7,11 +7,11 @@ import {
   Text,
   View,
 } from "react-native";
-import { styles } from "../styles/home.styles";
 import type { Priority } from "./home_tasks/task_types";
+import { styles } from "../../styles/home.styles";
 import { ModalHeader } from "./home_modal/modal_header";
-import { ModalTaskFields } from "./home_modal/modal_task_fields";
 import { ModalOptions } from "./home_modal/modal_options";
+import { ModalTaskFields } from "./home_modal/modal_task_fields";
 
 type TaskModalProps = {
   visible: boolean;

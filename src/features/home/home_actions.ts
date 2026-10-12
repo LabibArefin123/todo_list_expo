@@ -1,4 +1,7 @@
-import type { Priority, Task } from "../index_tasks";
+import type {
+  Priority,
+  Task,
+} from "../../components/home/home_tasks/task_types";
 
 // Toggle Task Completion
 export const toggleTask = (tasks: Task[], id: string): Task[] => {

@@ -1,4 +1,4 @@
-import type { Task } from "../index_tasks";
+import type { Task } from "../../components/home/home_tasks/task_types";
 
 export const STORAGE_KEY = "@taskflow_tasks";
 

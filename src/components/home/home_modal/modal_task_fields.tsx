@@ -1,5 +1,5 @@
 import { Text, TextInput, View } from "react-native";
-import { styles } from "../../styles/home.styles";
+import { styles } from "../../../styles/home.styles";
 
 type ModalTaskFieldsProps = {
   taskTitle: string;

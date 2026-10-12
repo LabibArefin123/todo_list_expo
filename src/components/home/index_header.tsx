@@ -1,5 +1,5 @@
 import { Pressable, Text, View } from "react-native";
-import { styles } from "../styles/home.styles";
+import { styles } from "../../styles/home.styles";
 
 type HeaderProps = {
   formattedDate: string;

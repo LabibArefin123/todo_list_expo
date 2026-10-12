@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
-import { styles } from "../../styles/home.styles";
+import { styles } from "../../../styles/home.styles";
 import type { ProgressProps } from "./progress_types";
 
 export function ProgressStatistics({

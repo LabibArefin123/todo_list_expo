@@ -1,13 +1,14 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
-import { styles } from "../styles/home.styles";
-import { TaskSectionHeader } from "./home_tasks/task_section_header";
-import { TaskSearchFilter } from "./home_tasks/task_search_filter";
 import { TaskList } from "./home_tasks/task_list";
+import { TaskSearchFilter } from "./home_tasks/task_search_filter";
+import { TaskSectionHeader } from "./home_tasks/task_section_header";
 import { filterTasks } from "./home_tasks/task_helpers";
 import type { TaskSectionProps } from "./home_tasks/task_types";
+import { styles } from "../../styles/home.styles";
 
 export type { Filter, Priority, Task } from "./home_tasks/task_types";
+
 export function HomeTasks({
   tasks,
   filter,

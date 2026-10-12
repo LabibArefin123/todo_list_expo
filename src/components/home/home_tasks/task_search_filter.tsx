@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable, Text, TextInput, View } from "react-native";
-import { styles } from "../../styles/home.styles";
+import { styles } from "../../../styles/home.styles";
 import { filters } from "./task_helpers";
 import type { Filter } from "./task_types";
 
