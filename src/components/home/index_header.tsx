@@ -1,4 +1,5 @@
 import { Pressable, Text, View } from "react-native";
+import { router } from "expo-router";
 import { styles } from "../../styles/home.styles";
 
 type HeaderProps = {
@@ -6,6 +7,10 @@ type HeaderProps = {
 };
 
 export function HomeHeader({ formattedDate }: HeaderProps) {
+  const openProfile = () => {
+    router.push("/profile");
+  };
+
   return (
     <>
       {/* Header */}
@@ -16,9 +21,14 @@ export function HomeHeader({ formattedDate }: HeaderProps) {
         </View>
 
         <Pressable
-          style={styles.avatar}
+          style={({ pressed }) => [
+            styles.avatar,
+            pressed && { opacity: 0.7, transform: [{ scale: 0.96 }] },
+          ]}
+          onPress={openProfile}
           accessibilityRole="button"
-          accessibilityLabel="User profile"
+          accessibilityLabel="Open user profile"
+          accessibilityHint="Navigates to your profile screen"
         >
           <Text style={styles.avatarText}>L</Text>
         </Pressable>

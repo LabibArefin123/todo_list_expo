@@ -1,0 +1,96 @@
+import { StyleSheet } from "react-native";
+
+export const modalStyles = StyleSheet.create({
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(25, 25, 46, 0.42)",
+    justifyContent: "flex-end",
+  },
+  modalCard: {
+    backgroundColor: "#FFFFFF",
+    borderTopLeftRadius: 29,
+    borderTopRightRadius: 29,
+    paddingHorizontal: 23,
+    paddingTop: 12,
+    paddingBottom: 35,
+  },
+  modalHandle: {
+    width: 42,
+    height: 5,
+    borderRadius: 5,
+    backgroundColor: "#DFDFEA",
+    alignSelf: "center",
+    marginBottom: 23,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 25,
+  },
+  modalEyebrow: {
+    color: "#8178D7",
+    fontSize: 9,
+    fontWeight: "800",
+    letterSpacing: 1.7,
+    marginBottom: 6,
+  },
+  modalTitle: {
+    color: "#25283B",
+    fontSize: 25,
+    fontWeight: "800",
+  },
+  modalClose: {
+    width: 38,
+    height: 38,
+    borderRadius: 13,
+    backgroundColor: "#F3F3F9",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  modalCloseText: {
+    color: "#62647A",
+    fontSize: 27,
+    lineHeight: 30,
+  },
+  inputLabel: {
+    color: "#777990",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1,
+    marginBottom: 9,
+    marginTop: 9,
+  },
+  input: {
+    minHeight: 52,
+    backgroundColor: "#F7F7FB",
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: "#ECECF5",
+    paddingHorizontal: 15,
+    color: "#282A3E",
+    fontSize: 14,
+    marginBottom: 12,
+  },
+  saveButton: {
+    minHeight: 53,
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 12,
+  },
+  saveButtonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  cancelButton: {
+    alignItems: "center",
+    paddingVertical: 15,
+  },
+  cancelButtonText: {
+    color: "#85869A",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+});
